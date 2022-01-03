@@ -10,6 +10,11 @@ defmodule Exlivery.Users.CreateOrUpdate do
 
   def call(_), do: {:error, "Invalid parameters!"}
 
-  defp save_user({:ok, %User{} = user}), do: UserAgent.save(user)
+  defp save_user({:ok, %User{} = user}) do
+    UserAgent.save(user)
+
+    {:ok, "User created or updated successfully!"}
+  end
+
   defp save_user({:error, _detail} = error), do: error
 end
