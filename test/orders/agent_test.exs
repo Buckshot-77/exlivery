@@ -37,12 +37,12 @@ defmodule Exlivery.Orders.AgentTest do
       assert response == expected_response
     end
 
-    # test "when the user is not found, returns an error" do
-    #   response = UserAgent.get("12312312312")
+    test "when the user is not found, returns an error" do
+      response = OrderAgent.get("12312312312")
 
-    #   expected_response = {:error, "User not found."}
+      expected_response = {:error, "Order not found."}
 
-    #   assert response == expected_response
-    # end
+      assert response == expected_response
+    end
   end
 end
